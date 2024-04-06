@@ -66,7 +66,8 @@ async function editSelectionWithContext(textEditor, prompt) {
     const format = textEditor.document.languageId;
     const context_pre = getTextBeforeSelection(textEditor, 1000);
     const context_post = getTextAfterSelection(textEditor, 1000);
-    const selectedText = textEditor.document.getText(textEditor.selection);
+    const selection = textEditor.selection;
+    const selectedText = textEditor.document.getText(selection);
     const improvedText = await queryLLMWithContext(apiKey, prompt, format, context_pre, context_post, selectedText);
 
     if (improvedText) {
