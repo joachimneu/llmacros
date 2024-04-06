@@ -1,0 +1,61 @@
+{
+  "name": "llmacros",
+  "displayName": "LLMacros",
+  "description": "Easily edit selected text with pre-defined macros",
+  "publisher": "jneu-net",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joachimneu/llmacros.git"
+  },
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Snippets", "Formatters", "Machine Learning"
+  ],
+  "activationEvents": [],
+  "main": "./src/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "LLMacros",
+      "properties": {
+        "llmacros.apiSecretKey": {
+            "type": "string",
+            "default": "",
+            "description": "Secret key to access OpenAI APIs (setup at: https://platform.openai.com/api-keys)"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "llmacros.doImproveIdiomaticness",
+        "title": "Improve idiomaticness"
+      },
+      {
+        "command": "llmacros.doShorten20",
+        "title": "Shorten by ~20%"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "llmacros.doImproveIdiomaticness",
+          "group": "navigation",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "llmacros.doShorten20",
+          "group": "navigation",
+          "when": "editorHasSelection"
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.24.0"
+  },
+  "dependencies": {
+    "openai": "^4.31.0"
+  }
+}
