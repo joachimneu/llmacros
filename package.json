@@ -7,12 +7,14 @@
     "type": "git",
     "url": "https://github.com/joachimneu/llmacros.git"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "vscode": "^1.0.0"
   },
   "categories": [
-    "Snippets", "Formatters", "Machine Learning"
+    "Snippets",
+    "Formatters",
+    "Machine Learning"
   ],
   "activationEvents": [],
   "main": "./src/extension.js",
@@ -21,9 +23,9 @@
       "title": "LLMacros",
       "properties": {
         "llmacros.apiSecretKey": {
-            "type": "string",
-            "default": "",
-            "description": "Secret key to access OpenAI APIs (setup at: https://platform.openai.com/api-keys)"
+          "type": "string",
+          "default": "",
+          "description": "Secret key to access OpenAI APIs (setup at: https://platform.openai.com/api-keys)"
         }
       }
     },
